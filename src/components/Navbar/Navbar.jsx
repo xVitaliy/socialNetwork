@@ -1,13 +1,13 @@
 import s from './Navbar.module.css'
 
-const Navbar = ()=> {
+const Navbar = () => {
     return (
         <div className={s.nav}>
             {/*<div className={s.item + " " + s.active}>*/}
-            <div className={`${s.item} ${s.active}`}>
+            <div className={s.item}>
                 <a>Profile</a>
             </div>
-            <div className={s.item}>
+            <div className={`${s.item} ${s.active}`}>
                 <a>Messages</a>
             </div>
             <div className={s.item}>
