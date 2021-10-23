@@ -12,7 +12,6 @@ const Profile = () => {
                 ava+description
             </div>
             <MyPosts/>
-
         </div>
     )
 }
