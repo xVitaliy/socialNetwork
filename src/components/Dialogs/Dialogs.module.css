@@ -11,6 +11,11 @@
     color: gold;
 }
 
+.dialogsItem a {
+    color: ghostwhite;
+    text-decoration: none;
+}
+
 .dialog {
 }
 
