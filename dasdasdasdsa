@@ -1,0 +1,71 @@
+[33mcommit 2c33d05524194b5a42c2212448055fc9ddab64e4[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Ivashin Vitaliy <ivasinvitaliy1989@gmail.com>
+Date:   Mon Oct 25 15:38:32 2021 +0300
+
+    29 цwe take out the data in index.js
+
+[33mcommit 80a12e8da545bae9dc010d00e4f6aaba1238f126[m
+Author: Ivashin Vitaliy <ivasinvitaliy1989@gmail.com>
+Date:   Sun Oct 24 21:09:47 2021 +0300
+
+    refactoring
+
+[33mcommit 7dc3566cadc0ecab1c03ebd4bed9e0bbbf7e641d[m
+Author: Ivashin Vitaliy <ivasinvitaliy1989@gmail.com>
+Date:   Sun Oct 24 18:47:25 2021 +0300
+
+    24 UI-BLL
+
+[33mcommit f132d48a6fa16f72d0ec8ff986caed87046c80d8[m
+Author: Ivashin Vitaliy <ivasinvitaliy1989@gmail.com>
+Date:   Sun Oct 24 13:39:59 2021 +0300
+
+    21 page Dialogs
+
+[33mcommit f5a38d2325825c4445a06c80574e78d4f52db318[m
+Author: Ivashin Vitaliy <ivasinvitaliy1989@gmail.com>
+Date:   Sun Oct 24 13:17:06 2021 +0300
+
+    20 NavLink
+
+[33mcommit 48c81ffe31d79af8e92cbb46f445e84c95251cb9[m
+Author: Ivashin Vitaliy <ivasinvitaliy1989@gmail.com>
+Date:   Sat Oct 23 18:52:31 2021 +0300
+
+    19 route, browser-router
+
+[33mcommit 46fdffc602a58ecf89f0808b8b01f06a4a018553[m
+Author: Ivashin Vitaliy <ivasinvitaliy1989@gmail.com>
+Date:   Sat Oct 23 18:12:04 2021 +0300
+
+    18 page Dialogs
+
+[33mcommit 32321873582a3525117e9cc975861df0a8f6dba6[m
+Author: Ivashin Vitaliy <ivasinvitaliy1989@gmail.com>
+Date:   Fri Oct 22 19:36:11 2021 +0300
+
+    16 props
+
+[33mcommit 82b63b9d8e94ad17ff9e9500733c3c389ab77859[m
+Author: Ivashin Vitaliy <ivasinvitaliy1989@gmail.com>
+Date:   Fri Oct 22 18:40:29 2021 +0300
+
+    15 folder structure
+
+[33mcommit 3437848d04cff7533161394e1414ea0b0fd673e4[m
+Author: Ivashin Vitaliy <ivasinvitaliy1989@gmail.com>
+Date:   Thu Oct 21 23:51:20 2021 +0300
+
+    14 css-modules
+
+[33mcommit a71e06cfb822a92a7f9fdce30766849a2ee8a0e2[m
+Author: Ivashin Vitaliy <ivasinvitaliy1989@gmail.com>
+Date:   Sat Oct 16 22:20:50 2021 +0300
+
+    06. Index.js,App,JSX
+
+[33mcommit aa0459f934cf11f6a1cf93fe25b4bdaa9723235a[m
+Author: Ivashin Vitaliy <ivasinvitaliy1989@gmail.com>
+Date:   Sat Oct 16 20:05:51 2021 +0300
+
+    Initialize project using Create React App

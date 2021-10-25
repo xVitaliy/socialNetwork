@@ -18,8 +18,8 @@ function App(props) {
                 <Navbar/>
                 <div className={'app-wrapper-content'}>
                     <Route path={'/dialogs'}
-                           render={() => <Dialogs dialogs={props.dialogs} messages={props.messages}/>}/>
-                    <Route path={'/profile'} render={() => <Profile posts={props.posts}/>}/>
+                           render={() => <Dialogs dialogs={props.state.dialogsPage}/>}/>
+                    <Route path={'/profile'} render={() => <Profile posts={props.state.profilePage}/>}/>
                     <Route path={'/news'} render={() => <News/>}/>
                     <Route path={'/music'} render={() => <Music/>}/>
                     <Route path={'/settings'} render={() => <Settings/>}/>
