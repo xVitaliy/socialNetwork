@@ -32,6 +32,7 @@ const state = {
             { id: 4, message: 'Yo', likeCount: '22' },
         ],
     },
+
     dialogsPage: {
         dialogs: [
             { id: 1, name: 'Vitaliy' },
