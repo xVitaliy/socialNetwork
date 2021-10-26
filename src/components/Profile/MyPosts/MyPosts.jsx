@@ -3,13 +3,15 @@ import Posts from "./Post/Posts";
 import React from "react";
 
 const MyPosts = (props) => {
+
     let postsElements = props.posts.map(p => <Posts message={p.message} likeCount={p.likeCount}/>)
 
     let newPostElement = React.createRef()
 
     const addPost = () => {
         let text = newPostElement.current.value
-        alert(text)
+        props.addPost(text)
+
     }
 
 
