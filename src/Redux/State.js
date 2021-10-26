@@ -23,6 +23,8 @@
 //     { id: 6, message: 'Yo!' },
 // ]
 
+import { rerenderEntireTree } from "../render";
+
 const state = {
     profilePage: {
         posts: [
@@ -65,4 +67,5 @@ export let addPost = (postMessage) => {
         likeCount: '0'
     }
     state.profilePage.posts.push(newPost)
+    rerenderEntireTree(state)
 }
