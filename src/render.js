@@ -8,7 +8,7 @@
 // import { addPost, updateNewPostText } from "./Redux/State";
 //
 //
-// export let rerenderEntireTree = (state) => {
+// export let _callSubscriber = (state) => {
 //     ReactDOM.render(
 //         <React.StrictMode>
 //             <BrowserRouter>

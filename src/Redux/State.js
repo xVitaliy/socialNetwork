@@ -1,62 +1,65 @@
-let rerenderEntireTree = () => {
-    console.log('state changed')
-}
+let store = {
+    _state: {
+        profilePage: {
+            posts: [
+                { id: 1, message: 'Hi, how are you?', likeCount: '15' },
+                { id: 2, message: 'It\'s my first post', likeCount: '11' },
+                { id: 3, message: 'Yo', likeCount: '1' },
+                { id: 4, message: 'Yo', likeCount: '22' },
+            ],
+            newPostText: 'my first project'
+        },
 
-const state = {
-    profilePage: {
-        posts: [
-            { id: 1, message: 'Hi, how are you?', likeCount: '15' },
-            { id: 2, message: 'It\'s my first post', likeCount: '11' },
-            { id: 3, message: 'Yo', likeCount: '1' },
-            { id: 4, message: 'Yo', likeCount: '22' },
-        ],
-        newPostText: 'my first project'
+        dialogsPage: {
+            dialogs: [
+                { id: 1, name: 'Vitaliy' },
+                { id: 2, name: 'Andrew' },
+                { id: 3, name: 'Sveta' },
+                { id: 4, name: 'Sasha' },
+                { id: 5, name: 'Stas' },
+                { id: 6, name: 'Valera' },
+            ],
+
+            messages: [
+                { id: 1, message: 'Hi' },
+                { id: 2, message: 'How are you?' },
+                { id: 3, message: 'I\'m fine' },
+                { id: 4, message: 'Yo!' },
+                { id: 5, message: 'Yo!' },
+                { id: 6, message: 'Yo!' },
+            ],
+        }
+
     },
 
-    dialogsPage: {
-        dialogs: [
-            { id: 1, name: 'Vitaliy' },
-            { id: 2, name: 'Andrew' },
-            { id: 3, name: 'Sveta' },
-            { id: 4, name: 'Sasha' },
-            { id: 5, name: 'Stas' },
-            { id: 6, name: 'Valera' },
-        ],
+    getState() {
+        return this._state
+    },
 
-        messages: [
-            { id: 1, message: 'Hi' },
-            { id: 2, message: 'How are you?' },
-            { id: 3, message: 'I\'m fine' },
-            { id: 4, message: 'Yo!' },
-            { id: 5, message: 'Yo!' },
-            { id: 6, message: 'Yo!' },
-        ],
-    }
+    addPost() {
+        let newPost = {
+            id: 5,
+            message: this._state.profilePage.newPostText,
+            likeCount: '0'
+        }
+        this._state.profilePage.posts.push(newPost)
+        this._state.profilePage.newPostText = ''
+        this._callSubscriber(this._state)
+    },
 
-}
-
-export default state
-window.state = state
-
-export const addPost = () => {
-    let newPost = {
-        id: 5,
-        message: state.profilePage.newPostText,
-        likeCount: '0'
-    }
-    state.profilePage.posts.push(newPost)
-    state.profilePage.newPostText = ''
-    rerenderEntireTree(state)
-}
-
-export const updateNewPostText = (newText) => {
-    state.profilePage.newPostText = newText
-    rerenderEntireTree(state)
-}
-
+    updateNewPostText(newText) {
+        this._state.profilePage.newPostText = newText
+        this._callSubscriber(this._state)
+    },
 
 //todo observer(паттерн наблюдатель) publisher-subscriber
-
-export const subscribe = (observer) => {
-    rerenderEntireTree = observer
+    subscribe(observer) {
+        this._callSubscriber = observer
+    },
+    _callSubscriber() {
+        console.log('state changed')
+    },
 }
+
+export default store
+window.store = store
