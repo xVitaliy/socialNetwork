@@ -12,7 +12,7 @@ const Users = (props) => {
         <div>
             <div>
                 {pages.map(p => {
-                    return <span className={props.currentPage === p && styles.selectedPage}
+                    return <span className={props.currentPage === p ?? styles.selectedPage}
                                  onClick={(e) => {
                                      props.onPageChanged(p)
                                  }}> {p}</span>
@@ -47,5 +47,7 @@ const Users = (props) => {
         </div>
     )
 }
+// todo  check str 15, ternary operator ?:
+
 
 export default Users
