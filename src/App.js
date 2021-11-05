@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Navbar from "./components/Navbar/Navbar";
 import { Route } from "react-router-dom";
@@ -10,24 +10,24 @@ import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 
-function App(props) {
+function App() {
     return (
         <div className="app-wrapper">
-            <HeaderContainer/>
-            <Navbar/>
+            <HeaderContainer />
+            <Navbar />
             <div className={'app-wrapper-content'}>
                 <Route path={'/dialogs'}
-                       render={() => <DialogsContainer/>}/>
+                       render={() => <DialogsContainer />} />
 
                 <Route path={'/profile/:userId?'}
-                       render={() => <ProfileContainer/>}/>
+                       render={() => <ProfileContainer />} />
 
                 <Route path={'/users'}
-                       render={() => <UsersContainer/>}/>
+                       render={() => <UsersContainer />} />
 
-                <Route path={'/news'} render={() => <News/>}/>
-                <Route path={'/music'} render={() => <Music/>}/>
-                <Route path={'/settings'} render={() => <Settings/>}/>
+                <Route path={'/news'} render={() => <News />} />
+                <Route path={'/music'} render={() => <Music />} />
+                <Route path={'/settings'} render={() => <Settings />} />
             </div>
         </div>
     );
