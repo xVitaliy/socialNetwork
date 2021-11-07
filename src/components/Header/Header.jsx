@@ -6,7 +6,7 @@ const Header = (props) => {
         <header className={s.header}>
             <img
                 src="https://w7.pngwing.com/pngs/813/735/png-transparent-bird-of-prey-logo-beak-desktop-bird-animals-computer-logo.png"
-                alt=""/>
+                alt="" />
             <div className={s.loginBlock}>
 
                 {props.isAuth ? props.login
