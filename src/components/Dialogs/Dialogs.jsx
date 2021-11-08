@@ -1,11 +1,9 @@
 import s from './Dialogs.module.css'
-// import { NavLink } from "react-router-dom";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-// import { sendMessageCreator, updateNewMessageBodyCreator } from "../../Redux/dialogs-reducer";
+import { Redirect } from "react-router-dom";
 
 const Dialogs = (props) => {
-
     let state = props.dialogsPage
 
     let dialogsElements = state.dialogs.map(d => <DialogItem key={d.id} id={d.id} name={d.name} />)
@@ -20,6 +18,7 @@ const Dialogs = (props) => {
         props.updateNewMessageBody(body)
     }
 
+    if (!props.isAuth) return <Redirect to={'/login'} />
 
     return (
         <div className={s.dialogs}>
