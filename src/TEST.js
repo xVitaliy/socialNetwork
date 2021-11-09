@@ -1,4 +1,7 @@
-const func = (num) => (num2) => num + num2
+function func1(str) {
+    return function (num2) {
+        return str + num2
+    }
+}
 
-
-console.log(func(1)(2));
+console.log(func1('withAuthRedirect')(2));
