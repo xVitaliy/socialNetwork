@@ -124,3 +124,57 @@
 // console.log(findVowels('hellooo'));
 
 
+//todo === add bank function
+
+// const output = {
+//     usd: [10000, 30000],
+//     gbp: [9000, 0],
+//     eur: [0, 7000],
+//     uah: [10000, 0],
+// }
+//
+// function banking(arr) {
+//     let output = {}
+//     arr.forEach(item => {
+//         let [currency, type, value] = item;
+//         if (!output[currency]) output[currency] = [0, 0]
+//         output[currency][type === 'buy' ? 0 : 1] += value
+//     })
+//
+//     return output
+// }
+//
+// console.log(banking(input));
+
+// function banking(arr) {
+//     let output = {}
+//     for (let i = 0; i < arr.length; i++) {
+//         let val = arr[i][0];
+//         if (!output[`${val}`]) output[`${val}`] = [0, 0]
+//         output[`${val}`][arr[i][1] === 'buy' ? 0 : 1] += arr[i][2]
+//     }
+//     return output
+// }
+// console.log(banking(input));
+
+// const input = [
+//     ['usd', 'buy', 10000],
+//     ['usd', 'sell', 5000],
+//     ['gbp', 'buy', 9000],
+//     ['eur', 'sell', 7000],
+//     ['uah', 'buy', 10000],
+//     ['usd', 'sell', 25000],
+// ]
+// const output = {
+//     usd: [10000, 30000],
+//     gbp: [9000, 0],
+//     eur: [0, 7000],
+//     uah: [10000, 0],
+// }
+// let result = input.reduce((acc, item) => {
+// в аккумулятор по ключу item[0] мы присваиваем текущее значение если оно существует или [0,0]
+//     acc[item[0]] = acc[item[0]] || [0, 0]
+//     acc[item[0]][item[1] === 'buy' ? 0 : 1] += item[2]
+//     return acc
+// }, {})
+// console.log(result)
