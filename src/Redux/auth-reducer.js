@@ -38,7 +38,7 @@ export const getAuthUserData = () => (dispatch) => {
                 let { id, login, email } = response.data.data
                 dispatch(setAuthUserData(id, login, email, true))
             }
-        })
+        });
 }
 
 export const login = (email, password, rememberMe) => (dispatch) => {
