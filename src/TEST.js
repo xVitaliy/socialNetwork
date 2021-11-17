@@ -180,3 +180,26 @@
 // console.log(result)
 
 
+// todo binary search
+
+// const arr = [11, 22, 33, 44, 55, 66, 77, 88, 99, 1010];
+//
+// function binarySearch(arr, el) {
+//     let left = -1;
+//     let right = arr.length
+//     while (right - left > 1) {
+//         let middle = Math.floor((right + left) / 2)
+//         if (arr[middle] === el) {
+//             return middle
+//         }
+//         if (arr[middle] > el) {
+//             right = middle
+//         } else {
+//             left = middle
+//         }
+//     }
+//     return -1
+// }
+//
+// console.log(binarySearch(arr, 88));
+
