@@ -7,9 +7,36 @@ import { Textarea } from "../../common/FormsControls/FormsControls";
 
 const maxLength10 = maxLengthCreator(10)
 
-const MyPosts = (props) => {
+
+// class MyPosts extends PureComponent {
+//
+//     // shouldComponentUpdate(nextProps, nextState, nextContext) {
+//     //     return nextProps !== this.props || nextState !== this.state
+//     // }
+//
+//     render() {
+//         let postsElements = this.props.posts.map(p => <Posts message={p.message} likeCount={p.likeCount} />)
+//         // let newPostElement = React.createRef()
+//
+//         const onAddPost = (values) => {
+//             this.props.addPost(values.newPostText);
+//         }
+//
+//         return (
+//             <div className={s.postsBlock}>
+//                 <h3> My Post </h3>
+//                 <AddNewPostFormRedux onSubmit={onAddPost} />
+//                 <div className={s.posts}>
+//                     {postsElements}
+//                 </div>
+//             </div>
+//         )
+//     }
+// }
+
+const MyPosts = React.memo((props) => {
+    console.log('MY-POSTS')
     let postsElements = props.posts.map(p => <Posts message={p.message} likeCount={p.likeCount} />)
-    let newPostElement = React.createRef()
 
     const onAddPost = (values) => {
         props.addPost(values.newPostText);
@@ -24,7 +51,8 @@ const MyPosts = (props) => {
             </div>
         </div>
     )
-}
+});
+
 
 let AddNewPostForm = (props) => {
     return (
