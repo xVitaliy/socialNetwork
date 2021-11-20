@@ -203,3 +203,16 @@
 //
 // console.log(binarySearch(arr, 88));
 
+
+const outcome = [
+    { amount: 1000, category: 'tax' },
+    { amount: 2000, category: 'salary' },
+    { amount: 2000, category: 'tax' },
+    { amount: 3000, category: 'salary' },
+    { amount: 2540, category: 'salary' },
+    { amount: 230, category: 'salary' },
+    { amount: 2200, category: 'salary' },
+];
+
+outcome
+    .forEach(({ amount }) => console.log(amount))
