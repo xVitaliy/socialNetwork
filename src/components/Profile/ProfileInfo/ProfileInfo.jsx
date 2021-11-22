@@ -1,6 +1,5 @@
 import s from './ProfileInfo.module.css'
 import Preloader from "../../common/Preloader/Preloader";
-import { updateStatus } from "../../../Redux/profile-reducer";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 const ProfileInfo = ({ profile, status, updateStatus }) => {
