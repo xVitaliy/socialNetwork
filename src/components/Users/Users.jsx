@@ -7,7 +7,7 @@ const Users = ({ currentPage, totalUsersCount, pageSize, onPageChanged, users, .
     return (
         <div>
             <Paginator currentPage={currentPage}
-                       totalUsersCount={totalUsersCount}
+                       totalItemsCount={totalUsersCount}
                        pageSize={pageSize}
                        onPageChanged={onPageChanged}
             />
