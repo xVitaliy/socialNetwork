@@ -1,6 +1,6 @@
 import './App.css';
 import Navbar from "./components/Navbar/Navbar";
-import { BrowserRouter, Route, withRouter } from "react-router-dom";
+import { HashRouter, Route, withRouter } from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
@@ -65,11 +65,19 @@ const AppContainer = compose(
 
 const SamuraiJSApp = (props) => {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Provider store={store}>
                 <AppContainer />
             </Provider>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 export default SamuraiJSApp
+
+//  заменем BrowserRouter -> HashRouter для удобства работы на GitHub (нам нужно, что-бы в URL(е)
+//  появился # и после перезагрузки страницы на GIT у нас не вылетатла ошибка, загрузка шла с нужного
+//  нам домена)
+
+// если бы мы использовали BrowserRouter нам бы пришлось дополнить
+// <BrowserRouter basename={process.env.PUBLIC_URL}> что бы загрузка начиналась относительно
+// нашего репозитория
