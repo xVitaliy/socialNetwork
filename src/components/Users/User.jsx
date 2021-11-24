@@ -1,5 +1,5 @@
 import styles from "./Users.module.css";
-import userPhoto from "../../assets/images/user.png";
+import userPhoto from "../../assets/images/user-photo.png";
 import React from "react";
 import { NavLink } from "react-router-dom";
 
@@ -40,7 +40,7 @@ const User = ({ user, followingInProgress, unfollow, follow }) => {
         </div>
     )
 }
-// todo  check str 15, ternary operator ?:
-
 
 export default User
+
+// check str 15, ternary operator ?:
