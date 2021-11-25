@@ -30,7 +30,6 @@ export const setAuthUserData = (userId, login, email, isAuth) => ({
     payload: { userId, login, email, isAuth }
 })
 
-
 export const getAuthUserData = () => async (dispatch) => {
     let response = await authAPI.me()
     if (response.data.resultCode === 0) {
