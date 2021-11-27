@@ -1,6 +1,6 @@
 import './App.css';
 import Navbar from "./components/Navbar/Navbar";
-import { HashRouter, Route, withRouter } from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch, withRouter } from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
@@ -13,15 +13,27 @@ import { compose } from "redux";
 import { initializeApp } from "./Redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
 import store from "./Redux/redux-store";
+import { withSuspense } from "./hoc/withSuspense";
 
 const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
 const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
 
 class App extends Component {
+    catchAllUnhandledErrors = () => {
+        console.log('some error occurred')
+    }
 
     componentDidMount() {
         this.props.initializeApp()
+        window.addEventListener('unhandledrejection', this.catchAllUnhandledErrors)
     }
+
+    // вызывается непосредственно перед размонтированием и удалением компонента
+    // если мы были подписаны на событие от него необходимо отписаться
+    componentWillUnmount() {
+        window.removeEventListener('unhandledrejection', this.catchAllUnhandledErrors)
+    }
+
 
     render() {
         if (!this.props.initialized) {
@@ -32,23 +44,25 @@ class App extends Component {
             <div className="app-wrapper">
                 <HeaderContainer />
                 <Navbar />
-
-
                 <div className={'app-wrapper-content'}>
-                    <Suspense fallback={<Preloader />}>
+                    <Switch>
+                        <Redirect exact from="/" to="/profile" />
                         <Route path={'/dialogs'}
-                               render={() => <DialogsContainer />} />
+                               render={withSuspense(DialogsContainer)} />
 
                         <Route path={'/profile/:userId?'}
-                               render={() => <ProfileContainer />} />
-                    </Suspense>
-                    <Route path={'/users'}
-                           render={() => <UsersContainer />} />
+                               render={withSuspense(ProfileContainer)} />
 
-                    <Route path={'/news'} render={() => <News />} />
-                    <Route path={'/music'} render={() => <Music />} />
-                    <Route path={'/settings'} render={() => <Settings />} />
-                    <Route path={'/login'} render={() => <LoginPage />} />
+                        <Route path={'/users'}
+                               render={() => <UsersContainer />} />
+
+                        <Route path={'/news'} render={() => <News />} />
+                        <Route path={'/music'} render={() => <Music />} />
+                        <Route path={'/settings'} render={() => <Settings />} />
+                        <Route path={'/login'} render={() => <LoginPage />} />
+                        <Route path={'*'} render={() => <div>404 NOT FOUND</div>} />
+
+                    </Switch>
                 </div>
             </div>
         );
@@ -65,11 +79,11 @@ const AppContainer = compose(
 
 const SamuraiJSApp = (props) => {
     return (
-        <HashRouter>
+        <BrowserRouter>
             <Provider store={store}>
                 <AppContainer />
             </Provider>
-        </HashRouter>
+        </BrowserRouter>
     )
 }
 export default SamuraiJSApp
