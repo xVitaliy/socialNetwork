@@ -2,17 +2,23 @@
     margin: 0 auto;
     display: grid;
 
-    width: 1600px;
     grid-template-areas:
             "h h"
-            "n c";
+            "n c"
+            "footer footer";
 
-    grid-template-rows: 60px 1fr;
+    grid-template-rows: 60px 1fr 60px;
     grid-template-columns: 2fr 10fr;
     grid-gap: 10px;
+    background-color: rgba(108, 128, 159, 0.83);
+    min-height: 100vh;
 }
 
 .app-wrapper-content {
     grid-area: c;
-    background-color: cornflowerblue;
+    background: #292d48;
+    padding: 2%;
+    font-size: 18px;
+    font-family: 'Oxygen', sans-serif;
+    color: #eeeeee;
 }

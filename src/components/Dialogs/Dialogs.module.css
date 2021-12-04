@@ -17,10 +17,44 @@
 }
 
 .dialog {
+    margin-top: 10px;
 }
 
 .messages {
     padding: 10px;
+}
+
+.messages p {
+    margin-bottom: 10px;
+}
+
+.messages textarea {
+    resize: none;
+    min-width: 30%;
+    min-height: 100px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+.messages button {
+    width: 100px;
+    height: 30px;
+    font-family: 'Oxygen', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    background: #e84545;
+    color: #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+}
+
+.messages button:hover {
+    background-color: #fa7d00;
+    transition: 0.2s linear background-color;
 }
 
 .message {

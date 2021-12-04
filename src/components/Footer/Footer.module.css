@@ -1,0 +1,11 @@
+.footerWrapper {
+    grid-area: footer;
+    background: #292d48;
+    padding: 0 2%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: #eeeeee;
+    justify-content: space-around;
+}
+

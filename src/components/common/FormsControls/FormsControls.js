@@ -18,7 +18,7 @@ const FormControl = ({ input, meta: { touched, error }, children }) => {
 
 export const Textarea = (props) => {
     const { input, meta, child, ...restProps } = props
-    return <FormControl {...props}><textarea {...input} {...restProps} />
+    return <FormControl {...props}><textarea  {...input} {...restProps} />
     </FormControl>
 }
 
@@ -31,10 +31,11 @@ export const Input = (props) => {
 
 export const createField = (placeholder, name, validators, component, props = {}, text = '') => (
     <div>
+        {text}
         <Field placeholder={placeholder}
                name={name}
                validate={validators}
                component={component}
-               {...props} /> {text}
+               {...props} />
 
     </div>)

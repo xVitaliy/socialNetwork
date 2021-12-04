@@ -14,6 +14,7 @@ import { initializeApp } from "./Redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
 import store from "./Redux/redux-store";
 import { withSuspense } from "./hoc/withSuspense";
+import Footer from "./components/Footer/Footer";
 
 const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
 const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
@@ -36,9 +37,9 @@ class App extends Component {
 
 
     render() {
-        if (!this.props.initialized) {
-            return <Preloader />
-        }
+        // if (!this.props.initialized) {
+        //     return <Preloader />
+        // }
 
         return (
             <div className="app-wrapper">
@@ -61,9 +62,9 @@ class App extends Component {
                         <Route path={'/settings'} render={() => <Settings />} />
                         <Route path={'/login'} render={() => <LoginPage />} />
                         <Route path={'*'} render={() => <div>404 NOT FOUND</div>} />
-
                     </Switch>
                 </div>
+                <Footer />
             </div>
         );
     }

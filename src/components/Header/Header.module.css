@@ -1,20 +1,63 @@
 .header {
     grid-area: h;
-    background-color: green;
+    background: #292d48;
+    padding: 0 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    color: #eeeeee;
 }
 
 .header img {
     width: 50px;
 }
 
+
 .loginBlock {
-    float: right;
-}
-
-.loginBlock a {
     color: white;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-.loginBlock a.activePage {
-    color: gold;
+.logo,
+.loginBlock a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.loginBlock a,
+.unLoginBlock button {
+    color: #eeeeee;
+    background: #e84545;
+    border-radius: 8px;
+    width: 100px;
+    height: 40px;
+    font-size: 22px;
+    box-shadow: 0 0 10px;
+    text-transform: uppercase;
+}
+
+
+.unLoginBlock button:hover,
+.loginBlock a:hover {
+    background-color: #fa7d00;
+    transition: 0.4s linear background-color;
+
+}
+
+.logo {
+    color: #e84545;
+    border-radius: 8px;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 1px solid;
+    width: 100px;
+    height: 40px;
+    box-shadow: 0 0 10px;
+}
+
+

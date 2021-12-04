@@ -9,7 +9,7 @@ let initialState = {
     email: null,
     login: null,
     isAuth: false,
-    captchaUrl: null // ечли captcha === null значит captcha не обязательна
+    captchaUrl: null // еcли captcha === null значит captcha не обязательна
 }
 
 const authReducer = (state = initialState, action) => {

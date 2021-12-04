@@ -1,14 +1,61 @@
 .formControl.error input,
 .formControl.error textarea {
-    border: 4px red solid;
+    border: 4px #e84545 solid;
 }
 
 .formControl.error span {
-    color: yellow;
+    color: #e84545;
 }
 
 .formSummaryError {
     border: yellow 2px solid;
     padding: 5px;
     color: yellow;
+}
+
+.inputWrapper {
+    border: 1px solid #eeeeee;
+    padding: 1% 2%;
+    color: #eeeeee;
+    text-align: center;
+    width: 30%;
+    margin: 0 auto;
+    border-radius: 12px;
+    position: relative;
+}
+
+.inputWrapper h1 {
+    font-size: 26px;
+    line-height: 2rem;
+    padding: 10px;
+
+}
+
+.inputWrapper input {
+    margin-bottom: 10px;
+    padding: 0 12px;
+    font-size: 22px;
+    height: 36px;
+    border-radius: 6px;
+
+}
+
+
+.formButton {
+    color: #eeeeee;
+    background: #e84545;
+    border-radius: 8px;
+    width: 100px;
+    height: 40px;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+
+.formButton:hover {
+    background-color: #fa7d00;
+    transition: 0.4s linear background-color;
+
 }

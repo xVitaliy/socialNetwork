@@ -1,7 +1,13 @@
 .nav {
     grid-area: n;
-    background-color: burlywood;
+    background: #292d48;
     padding: 20px;
+    font-family: 'Oxygen', sans-serif;
+}
+
+.item {
+    padding: 7px 15px;
+    font-size: 22px;
 }
 
 .item a {
@@ -9,6 +15,13 @@
     text-decoration: none;
 }
 
+.item a:hover {
+    background: linear-gradient(270deg, transparent, gold);
+    animation: animate 2s linear infinite;
+    animation-delay: 1s;
+}
+
 .item a.active {
     color: gold;
+    text-shadow: 0 0 20px;
 }
