@@ -16,7 +16,7 @@ const Posts = (props) => {
 
             <div>
                 <button
-                    onClick={() => dispatch(incrementLikeCount(props.id))}>Like: {props.likeCount ? props.likeCount : ''}</button>
+                    onClick={() => dispatch(incrementLikeCount(props.id))}>Like {props.likeCount && props.likeCount}</button>
             </div>
         </div>
     )

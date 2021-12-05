@@ -28,3 +28,10 @@
     margin-top: 40px;
 }
 
+.posts button {
+    width: 50px;
+    height: 20px;
+    border-radius: 6px;
+    background-color: rgba(0, 163, 250, 0.83);
+}
+
