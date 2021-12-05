@@ -24,11 +24,10 @@ const User = ({ user, followingInProgress, unfollow, follow }) => {
                                   onClick={() => {
                                       follow(user.id);
                                   }}>Follow</button>}
-
                 </div>
             </div>
             <div>
-                <div className={styles.userName}>
+                <div>
                     <div>{user.name}</div>
                     <div>{user.status}</div>
                 </div>

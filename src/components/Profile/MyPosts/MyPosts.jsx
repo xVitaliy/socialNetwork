@@ -2,10 +2,9 @@ import s from './MyPosts.module.css'
 import Posts from "./Post/Posts";
 import React from "react";
 import { Field, reduxForm } from "redux-form";
-import { maxLengthCreator } from "../../../utils/validators/validators";
+import { maxLengthCreator, required } from "../../../utils/validators/validators";
 import { Textarea } from "../../common/FormsControls/FormsControls";
 
-const maxLength10 = maxLengthCreator(10)
 
 //todo class Component
 
@@ -72,3 +71,8 @@ let AddNewPostForm = (props) => {
 let AddNewPostFormRedux = reduxForm({ form: 'ProfileAddNewPostForm' })(AddNewPostForm)
 
 export default MyPosts
+
+//example
+// const maxLength10 = maxLengthCreator(10)
+//Field
+// validate={[required, maxLength10]}
