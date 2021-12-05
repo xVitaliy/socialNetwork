@@ -2,6 +2,29 @@
     padding: 10px;
 }
 
-.posts {
-    margin-top: 10px;
+.postsBlock h3 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
+
+.buttonWrapper button {
+    color: #eeeeee;
+    background: #e84545;
+    border-radius: 8px;
+    width: 100px;
+    height: 30px;
+    font-size: 22px;
+    padding-top: 3px;
+    margin-bottom: 10px;
+}
+
+.buttonWrapper button:hover {
+    background-color: #fa7d00;
+    transition: 0.2s linear background-color;
+}
+
+.posts {
+    margin-top: 40px;
+}
+

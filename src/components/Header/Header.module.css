@@ -36,7 +36,7 @@
     width: 100px;
     height: 40px;
     font-size: 22px;
-    box-shadow: 0 0 10px;
+    box-shadow: 0 0 10px #e84545;
     text-transform: uppercase;
 }
 
@@ -46,6 +46,12 @@
     background-color: #fa7d00;
     transition: 0.4s linear background-color;
 
+}
+
+.unLoginBlock span {
+    padding: 0 30px;
+    text-shadow: 0 0 10px #e84545;
+    color: #e84545;
 }
 
 .logo {

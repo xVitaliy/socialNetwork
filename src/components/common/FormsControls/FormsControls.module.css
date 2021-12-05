@@ -46,16 +46,13 @@
     background: #e84545;
     border-radius: 8px;
     width: 100px;
-    height: 40px;
+    height: 30px;
     font-size: 22px;
-    font-style: normal;
-    font-weight: bold;
-    text-transform: uppercase;
-
+    padding-top: 3px;
+    margin-bottom: 10px;
 }
 
 .formButton:hover {
     background-color: #fa7d00;
-    transition: 0.4s linear background-color;
-
+    transition: 0.2s linear background-color;
 }

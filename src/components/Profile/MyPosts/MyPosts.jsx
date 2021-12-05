@@ -36,7 +36,8 @@ const maxLength10 = maxLengthCreator(10)
 // }
 
 const MyPosts = React.memo((props) => {
-    let postsElements = props.posts.map(p => <Posts key={p.id} message={p.message} likeCount={p.likeCount} />)
+
+    let postsElements = props.posts.map(p => <Posts key={p.id} message={p.message} likeCount={p.likeCount} id={p.id} />)
 
     const onAddPost = (values) => {
         props.addPost(values.newPostText);
@@ -44,7 +45,7 @@ const MyPosts = React.memo((props) => {
 
     return (
         <div className={s.postsBlock}>
-            <h3> My Post </h3>
+            <h3> My Posts </h3>
             <AddNewPostFormRedux onSubmit={onAddPost} />
             <div className={s.posts}>
                 {postsElements}
@@ -56,12 +57,12 @@ const MyPosts = React.memo((props) => {
 let AddNewPostForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
-            <div>
+            <div className={'myPostsField'}>
                 <Field component={Textarea} name={'newPostText'}
                        placeholder={'Post message'}
                        validate={[required, maxLength10]} />
             </div>
-            <div>
+            <div className={s.buttonWrapper}>
                 <button>Add post</button>
             </div>
         </form>

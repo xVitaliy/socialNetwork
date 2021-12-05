@@ -7,7 +7,7 @@
             "n c"
             "footer footer";
 
-    grid-template-rows: 60px 1fr 60px;
+    grid-template-rows: 60px 1fr 80px;
     grid-template-columns: 2fr 10fr;
     grid-gap: 10px;
     background-color: rgba(108, 128, 159, 0.83);

@@ -14,7 +14,7 @@ const Dialogs = (props) => {
         props.sendMessage(value.newMessageBody)
     }
 
-    if (!props.isAuth) return <Redirect to={'/login'} />
+    // if (!props.isAuth) return <Redirect to={'/login'} />
 
     return (
         <div className={s.dialogs}>
@@ -23,7 +23,7 @@ const Dialogs = (props) => {
             </div>
             <div className={s.messages}>
                 <AddMessageForm onSubmit={addNewMessage} />
-                <div>{messagesElements}</div>
+                <div className={s.messageWrapper}>{messagesElements}</div>
             </div>
         </div>
     )

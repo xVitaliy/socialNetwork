@@ -81,3 +81,21 @@ h1, h2, h3, h4, h5, h6 {
     font-size: inherit;
     font-weight: inherit;
 }
+
+.myPostsField textarea,
+.redactForm input,
+.redactForm textarea {
+    resize: unset;
+    width: 200px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    min-height: 40px;
+    font-size: 18px;
+
+}
+
+.myPostsField textarea {
+    min-width: 500px;
+    height: 100px;
+    padding: 10px;
+}

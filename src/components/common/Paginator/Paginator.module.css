@@ -1,21 +1,39 @@
-/*.selectedPage {*/
-/*    font-weight: bold;*/
-/*}*/
-
-/*.cursor {*/
-/*    cursor: pointer;*/
-/*}*/
-
 .paginator {
-    margin: 10px;
+    margin: 30px;
+    display: flex;
+    gap: 10px;
+    padding: 15px 0;
+    max-width: 40%;
+    font-family: 'Oxygen', sans-serif;
+}
+
+.paginator span {
+    width: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.paginator span:hover {
+    color: #e84545;
+    transition: 0.2s;
 }
 
 .pageNumber {
     padding: 2px;
-    border: 1px solid grey;
 }
 
 .pageNumber.selectedPage {
     font-weight: bold;
-    border-color: black;
+    color: #e84545;
+    text-shadow: 0 0 10px #e84545, 0 0 15px #e84545, 0 0 20px #e84545;
+}
+
+.paginator button {
+    padding: 2px 20px 0;
+    background-color: #e84545;
+    color: #eeeeee;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #e84545;
+    display: flex;
+    align-items: center;
 }

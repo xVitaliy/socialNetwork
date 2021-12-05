@@ -6,25 +6,32 @@ const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_STATUS = 'SET_STATUS';
 const DELETE_POST = 'DELETE_POST';
 const SAVE_PHOTO_SUCCESS = 'SAVE_PHOTO_SUCCESS';
+const INC_LIKE_COUNT = 'INC_LIKE_COUNT';
 
 let initialState = {
     posts: [
-        { id: 1, message: 'Hi, how are you?', likeCount: '15' },
-        { id: 2, message: 'It\'s my first post', likeCount: '11' },
-        { id: 3, message: 'Yo', likeCount: '1' },
-        { id: 4, message: 'Yo', likeCount: '22' },
+        { id: 1, message: 'Hi, how are you?', likeCount: 15 },
+        { id: 2, message: 'It\'s my first post', likeCount: 11 },
+        { id: 3, message: 'Yo', likeCount: 1 },
+        { id: 4, message: 'Yo', likeCount: 22 },
     ],
     profile: null,
     status: '',
 }
-
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
+        case INC_LIKE_COUNT: {
+            return {
+                ...state, posts: state.posts.map(p => {
+                    return p.id === action.id ? { ...p, likeCount: p.likeCount + 1 } : p
+                })
+            }
+        }
         case ADD_POST: {
             let newPost = {
-                id: Date.now(),
+                id: Date.now().toLocaleString(),
                 message: action.newPostText,
-                likeCount: '0'
+                likeCount: 0
             }
             return {
                 ...state,
@@ -51,6 +58,7 @@ const profileReducer = (state = initialState, action) => {
 export default profileReducer
 
 export const addPostActionCreator = (newPostText) => ({ type: ADD_POST, newPostText })
+export const incrementLikeCount = (id) => ({ type: INC_LIKE_COUNT, id })
 export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile })
 export const setStatus = (status) => ({ type: SET_STATUS, status })
 export const deletePost = (postId) => ({ type: DELETE_POST, postId })

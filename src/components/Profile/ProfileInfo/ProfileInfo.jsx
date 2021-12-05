@@ -29,14 +29,26 @@ const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, savePr
     return (
         <div>
             <div className={s.descriptionBlock}>
-                <img alt={''} src={profile.photos.large || userPhoto} className={s.mainPhoto} />
-                {isOwner && <input type={'file'} onChange={mainPhotoSelectedOn} />}
+                <div className={s.imgForm}>
 
-                {editMode
-                    ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit} />
-                    : <ProfileData goToEditMode={() => setEditMode(true)} profile={profile} isOwner={isOwner} />}
+                    <img alt={''} src={profile.photos.large || userPhoto} className={s.mainPhoto} />
+                    <div className={s.btnWrapper}>change photo
+                        {isOwner &&
+                            <input className={s.btn} type={'file'} onChange={mainPhotoSelectedOn} />}
+                    </div>
+                </div>
+                <div>
+                    <div className={s.status}><ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
+                    </div>
+                    {editMode
+                        ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit} />
+                        : <ProfileData goToEditMode={() => setEditMode(true)} profile={profile} isOwner={isOwner} />}
+                </div>
 
-                <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
+
+            </div>
+            <div className={s.line}>
+
             </div>
         </div>
     )
@@ -45,28 +57,28 @@ const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, savePr
 // компонент, который отвечает за реализацию нашей инфы
 const ProfileData = ({ profile, isOwner, goToEditMode }) => {
     return (
-        <div>
+        <div className={s.userInfo}>
             {isOwner && <div>
-                <button onClick={goToEditMode}>edit</button>
+                <button onClick={goToEditMode}>edit form</button>
             </div>}
-            <div>
-                <b>Full name</b>: {profile.fullName}
+            <div className={s.itemInfo}>
+                <span>Full name:</span> {profile.fullName}
             </div>
-            <div>
-                <b>Looking for a job</b>: {profile.lookingForAJob ? 'yes' : 'no'}
+            <div className={s.itemInfo}>
+                <span>Looking for a job:</span> {profile.lookingForAJob ? 'yes' : 'no'}
             </div>
             {
                 profile.lookingForAJob &&
-                <div>
-                    <b>My professionals skills</b>: {profile.lookingForAJob}
+                <div className={s.itemInfo}>
+                    <span>My professionals skills:</span> {profile.lookingForAJobDescription}
                 </div>
             }
 
-            <div>
-                <b>About me</b>: {profile.aboutMe}
+            <div className={s.itemInfo}>
+                <span>About me:</span> {profile.aboutMe}
             </div>
-            <div>
-                <b>Contacts</b>: {Object.keys(profile.contacts).map(key => {
+            <div className={s.itemInfo}>
+                <span>Contacts:</span> {Object.keys(profile.contacts).map(key => {
                 return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]} />
             })}
             </div>
@@ -76,7 +88,7 @@ const ProfileData = ({ profile, isOwner, goToEditMode }) => {
 
 
 const Contact = ({ contactTitle, contactValue }) => {
-    return <div><b className={s.contact}>{contactTitle}</b>: {contactValue} </div>
+    return <div className={s.contactWrapper}><span className={s.contact}>{contactTitle}</span>: {contactValue} </div>
 }
 
 export default ProfileInfo

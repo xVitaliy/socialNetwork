@@ -7,5 +7,60 @@
     position: relative;
     color: #eeeeee;
     justify-content: space-around;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 12px;
 }
 
+.footerProject,
+.footerContact {
+    position: relative;
+    border: 1px solid #00d6fd;
+    padding: 2px 12px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px #00d6fd;
+    height: 90%;
+}
+
+.footerContact img {
+    width: 17px;
+    background: #00d6fd;
+    border-radius: 3px;
+    margin-right: 16px;
+}
+
+.tel,
+.name,
+.email {
+    display: flex;
+    align-items: center;
+    padding: 3px;
+}
+
+.tel p,
+.name p,
+.email p {
+    border-bottom: 1px solid #00d6fd;
+    width: 100%;
+}
+
+.footerProject {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.footerProject img {
+    width: 40px;
+}
+
+.logo {
+    animation: logo 13s linear infinite;
+
+}
+
+
+@keyframes logo {
+    to {
+        transform: rotate(360deg);
+    }
+}

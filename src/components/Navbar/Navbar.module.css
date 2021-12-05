@@ -1,7 +1,7 @@
 .nav {
     grid-area: n;
     background: #292d48;
-    padding: 20px;
+    padding: 30px 20px;
     font-family: 'Oxygen', sans-serif;
 }
 

@@ -1,12 +1,90 @@
 .descriptionBlock {
-    padding: 10px;
+    display: flex;
+    gap: 10%;
+    margin-bottom: 50px;
+}
+
+.line {
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #e84545);
+    margin-bottom: 10px;
 }
 
 .mainPhoto {
-    max-width: 200px;
-    border-radius: 50%;
+    max-width: 300px;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 .contact {
     padding-left: 20px;
+}
+
+.contactWrapper {
+    margin-top: 10px;
+}
+
+.imgForm {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.btn {
+    width: 200px;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.btnWrapper {
+    position: relative;
+    border: 2px solid #e84545;
+    width: 200px;
+    height: 30px;
+    margin-left: 50px;
+    border-radius: 8px;
+    text-align: center;
+    padding-top: 4px;
+    background-color: #e84545;
+}
+
+.userInfo button {
+    color: #eeeeee;
+    background: #e84545;
+    border-radius: 8px;
+    width: 100px;
+    height: 30px;
+    font-size: 22px;
+    padding-top: 3px;
+    margin-bottom: 10px;
+}
+
+.userInfo button:hover {
+    background-color: #fa7d00;
+    transition: 0.2s linear background-color;
+}
+
+.status {
+    border-bottom: 2px solid powderblue;
+    padding: 5px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.status span:first-child {
+    color: #e84545;
+}
+
+.itemInfo {
+    padding: 10px 0;
+}
+
+.itemInfo span {
+    text-transform: uppercase;
+    color: #e84545;
+    font-size: 16px;
+    font-weight: bold;
 }
